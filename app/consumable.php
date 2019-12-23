@@ -6,32 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class consumable extends Model
 {
-    public function index(){
-
-    }
-
-    public function show(){
-
-    }
-
-    public function create(){
-
-    }
-
-    public function update(){
-
-    }
-
-    public function edit(){
-
-    }
-
-    public function store(){
-
-    }
-
-    public function destroy(){
-
-    }
+    //belongsto a material or to many materials
 
 }

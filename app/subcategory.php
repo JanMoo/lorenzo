@@ -6,31 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class subcategory extends Model
 {
-    public function index(){
-
+    //belongs to a category
+    //each subcategory has one main category
+    public function categories()
+    {
+        return $this->belongsTo(Category::class);
     }
 
-    public function show(){
-
-    }
-
-    public function create(){
-
-    }
-
-    public function update(){
-
-    }
-
-    public function edit(){
-
-    }
-
-    public function store(){
-
-    }
-
-    public function destroy(){
-
+    //has many materials
+    public function materials()
+    {
+        return $this->hasMany(Material::class);
     }
 }

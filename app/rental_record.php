@@ -6,31 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class rental_record extends Model
 {
-    public function index(){
+   //has many incidents
+   public function incidents()
+   {
+       return $this->hasMany(Incident::class);
+   }
 
-    }
+   //has many materials many to many realtionship with pivot table
+   public function materials()
+   {
+       return $this->belongsToMany(Material::class);
+   }
 
-    public function show(){
+   //belongs to a user
+   public function user()
+   {
+       return $this->belongsTo(User::class);
+   }
 
-    }
+   //has many consumables tied to the materials
 
-    public function create(){
-
-    }
-
-    public function update(){
-
-    }
-
-    public function edit(){
-
-    }
-
-    public function store(){
-
-    }
-
-    public function destroy(){
-
-    }
 }

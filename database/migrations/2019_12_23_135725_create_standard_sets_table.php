@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIncidentsTable extends Migration
+class CreateStandardSetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateIncidentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('incidents', function (Blueprint $table) {
+        Schema::create('standard_sets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('rental_record_id');
-            $table->string('incident_title', 100);
-            $table->text('incident_description');
+            $table->string('standard_set_title', 100);
+            $table->text('standard_set_description');
             $table->timestamps();
-            $table->unsignedInteger('user_id');
         });
     }
 
@@ -30,6 +28,6 @@ class CreateIncidentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('incidents');
+        Schema::dropIfExists('standard_sets');
     }
 }

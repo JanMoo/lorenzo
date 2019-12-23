@@ -16,9 +16,9 @@ class CreateRentalRecordsTable extends Migration
         Schema::create('rental_records', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamp('rental_start');
-            $table->timestamp('rental_stop');
+            $table->unsignedInteger('user_id');
+            $table->dateTime('rental_start');
+            $table->dateTime('rental_stop');
         });
     }
 

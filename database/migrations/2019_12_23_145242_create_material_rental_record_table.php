@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIncidentsTable extends Migration
+class CreateMaterialRentalRecordTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateIncidentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('incidents', function (Blueprint $table) {
+        Schema::create('material_rental_record', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('material_id');
             $table->unsignedInteger('rental_record_id');
-            $table->string('incident_title', 100);
-            $table->text('incident_description');
             $table->timestamps();
-            $table->unsignedInteger('user_id');
         });
     }
 
@@ -30,6 +28,6 @@ class CreateIncidentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('incidents');
+        Schema::dropIfExists('material_rental_record');
     }
 }

@@ -17,7 +17,6 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('category_title', 100);
             $table->text('category_description');
-            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }

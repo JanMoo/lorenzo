@@ -6,31 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class photo extends Model
 {
-    public function index(){
+    //belongsto an incident or a material
 
-    }
-
-    public function show(){
-
-    }
-
-    public function create(){
-
-    }
-
-    public function update(){
-
-    }
-
-    public function edit(){
-
-    }
-
-    public function store(){
-
-    }
-
-    public function destroy(){
-
-    }
 }

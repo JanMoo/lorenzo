@@ -6,31 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class material extends Model
 {
-    public function index(){
-
+    //belongs to a standard set, but part of many so -> many to many
+    public function standard_sets()
+    {
+        return $this->belongsToMany(Standard_set::class);
     }
-
-    public function show(){
-
-    }
-
-    public function create(){
-
-    }
-
-    public function update(){
-
-    }
-
-    public function edit(){
-
-    }
-
-    public function store(){
-
-    }
-
-    public function destroy(){
-
+    //belongs to a category
+    //belongs to a subcategory
+    //has many photos
+    //many to many rental_records
+    public function rental_records()
+    {
+        return $this->belongsToMany(Rental_record::class);
     }
 }
