@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class material_standard_set extends Model
+class Material_standard_set extends Model
 {
     //
 }

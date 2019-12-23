@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class rental_record extends Model
+class Rental_record extends Model
 {
    //has many incidents
    public function incidents()

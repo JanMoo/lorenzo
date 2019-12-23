@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMaterialStandardSetsTable extends Migration
+class ConsumableRentalRecord extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateMaterialStandardSetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('material_standard_sets', function (Blueprint $table) {
+        Schema::create('consumable_rental_record', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('material_id');
-            $table->unsignedInteger('standard_set_id');
+            $table->unsignedInteger('consumable_id');
+            $table->unsignedInteger('rental-record_id');
+            $table->float('amount_used', 8, 2)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -28,6 +30,6 @@ class CreateMaterialStandardSetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('material_standard_sets');
+        Schema::dropIfExists('consumable_rental_record');
     }
 }

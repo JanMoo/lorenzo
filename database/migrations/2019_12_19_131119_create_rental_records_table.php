@@ -19,6 +19,7 @@ class CreateRentalRecordsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->dateTime('rental_start');
             $table->dateTime('rental_stop');
+            $table->softDeletes();
         });
     }
 

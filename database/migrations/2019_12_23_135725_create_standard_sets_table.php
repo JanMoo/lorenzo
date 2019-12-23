@@ -18,6 +18,7 @@ class CreateStandardSetsTable extends Migration
             $table->string('standard_set_title', 100);
             $table->text('standard_set_description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

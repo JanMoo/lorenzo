@@ -18,6 +18,7 @@ class CreateSubcategoriesTable extends Migration
             $table->string('subcategory_title', 100);
             $table->text('subcategory_description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

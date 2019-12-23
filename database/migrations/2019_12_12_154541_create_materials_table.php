@@ -24,6 +24,7 @@ class CreateMaterialsTable extends Migration
             $table->boolean('material_is_archived');
             $table->boolean('material_needs_verification');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

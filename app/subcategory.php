@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class subcategory extends Model
+class Subcategory extends Model
 {
     //belongs to a category
     //each subcategory has one main category

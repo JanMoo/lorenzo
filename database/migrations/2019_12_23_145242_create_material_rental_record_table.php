@@ -18,6 +18,7 @@ class CreateMaterialRentalRecordTable extends Migration
             $table->unsignedInteger('material_id');
             $table->unsignedInteger('rental_record_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

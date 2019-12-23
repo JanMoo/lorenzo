@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConsumablesTable extends Migration
+class CreatePersonalSetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateConsumablesTable extends Migration
      */
     public function up()
     {
-        Schema::create('consumables', function (Blueprint $table) {
+        Schema::create('personal_sets', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('consumable_title', 100);
-            $table->text('consumable_description');
-            $table->float('consumable_price', 8, 2);
-            $table->string('consumable_unit', 100);
-            $table->bigInteger('consumable_stock');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -32,6 +28,6 @@ class CreateConsumablesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('consumables');
+        Schema::dropIfExists('personal_sets');
     }
 }
