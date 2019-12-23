@@ -15,6 +15,12 @@ class CreateMaterialsTable extends Migration
     {
         Schema::create('materials', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('material_title', 100);
+            $table->text('material_description');
+            $table->string('owner', 100);
+            $table->boolean('material_is_broken');
+            $table->boolean('material_is_archived');
+            $table->boolean('material_needs_verification');
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class CreateConsumablesTable extends Migration
     {
         Schema::create('consumables', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('consumable_title', 100);
+            $table->text('consumable_description');
+            $table->float('consumable_price', 8, 2);
+            $table->string('consumable_unit', 100);
+            $table->bigInteger('consumable_stock');
             $table->timestamps();
         });
     }
