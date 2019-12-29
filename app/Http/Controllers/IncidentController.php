@@ -30,6 +30,7 @@ class IncidentController extends Controller
 
     //create a new incident
     //needs user id and needs rentalrecord
+    //show form to create new incident
     public function create(){
 
 
@@ -44,9 +45,13 @@ class IncidentController extends Controller
 
     }
 
+
     public function store(){
         //validate request
-
+        request()->validate([
+            'incident_title' => ['required', 'string', 'max:255'],
+            'incident_description' => ['required', 'string'],
+            ]);
         //then store
     }
 
