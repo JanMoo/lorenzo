@@ -148,68 +148,68 @@ Route::group(['prefix' => 'admin',  'middleware' => 'verified'], function () {
 //rental records
 //incidents
 //middleware auth must be logged in to acces
-Route::group(['prefix' => 'user/{user}',  'middleware' => 'verified'], function () {
+Route::group(['prefix' => 'user',  'middleware' => 'verified'], function () {
 
     Route::group(['prefix' => 'personalsets'], function () {
 
-        //show all subcategorys
+        //show all personalset(s) made by user
         Route::get('','PersonalSetController@index')->name('personalsets.index');
 
-        //show form to create a new subcategory
+        //show form to create a newpersonalset(s) by user which is coupled to a rentalrecord
         Route::get('new','PersonalSetController@create')->name('personalsets.create');
 
-        //store the form post request for new subcategory POST
+        //store the form post request for newpersonalset(s) POST
         Route::post('create','PersonalSetController@store')->name('personalsets.store');
 
-        //show info of a single subcategory and show form to edit
+        //show info of a singlepersonalset(s) and show form to edit
         Route::get('{personalset}','PersonalSetController@show')->name('personalsets.show');
 
         //store updated info PUT
         Route::get('{personalset}/edit','PersonalSetController@update')->name('personalsets.update');
 
-        //destroy a subcategory DELETE
+        //destroy a personalset(s) DELETE
         Route::get('{personalset}/delete','PersonalSetController@delete')->name('personalsets.delete');
     });
 
     Route::group(['prefix' => 'rentalrecords'], function () {
 
-        //show all subcategorys
+        //show all  rentalrecord(s)
         Route::get('','RentalRecordController@index')->name('rentalrecords.index');
 
-        //show form to create a new subcategory
+        //show form to create a new rentalrecord(s)
         Route::get('new','RentalRecordController@create')->name('rentalrecords.create');
 
-        //store the form post request for new subcategory POST
+        //store the form post request for new rentalrecord(s) POST
         Route::post('create','RentalRecordController@store')->name('rentalrecords.store');
 
-        //show info of a single subcategory and show form to edit
+        //show info of a single rentalrecord(s) and show form to edit
         Route::get('{rentalrecord}','RentalRecordController@show')->name('rentalrecords.show');
 
         //store updated info PUT
         Route::get('{rentalrecord}/edit','RentalRecordController@update')->name('rentalrecords.update');
 
-        //destroy a subcategory DELETE
+        //destroy a rentalrecord(s) DELETE
         Route::get('{rentalrecord}/delete','RentalRecordController@delete')->name('rentalrecords.delete');
     });
 
     Route::group(['prefix' => 'incidents'], function () {
 
-        //show all subcategorys
+        //show all  incident(s)
         Route::get('','IncidentController@index')->name('incidents.index');
 
-        //show form to create a new subcategory
+        //show form to create a new incident(s)
         Route::get('new','IncidentController@create')->name('incidents.create');
 
-        //store the form post request for new subcategory POST
+        //store the form post request for new incident(s) POST
         Route::post('create','IncidentController@store')->name('incidents.store');
 
-        //show info of a single subcategory and show form to edit
+        //show info of a single incident(s) and show form to edit
         Route::get('{incident}','IncidentController@show')->name('incidents.show');
 
         //store updated info PUT
         Route::get('{incident}/edit','IncidentController@update')->name('incidents.update');
 
-        //destroy a subcategory DELETE
+        //destroy a incident(s) DELETE
         Route::get('{incident}/delete','IncidentController@delete')->name('incidents.delete');
     });
 });

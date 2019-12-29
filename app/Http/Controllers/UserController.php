@@ -44,9 +44,12 @@ class UserController extends Controller
      * @param  \NxTMateriaalbeheer\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        //
+         //check if in database
+         //$user = User::find($user);
+         $user = User::find($id);
+         return view('admin.users_show', compact('user'));
     }
 
     /**
@@ -55,9 +58,9 @@ class UserController extends Controller
      * @param  \NxTMateriaalbeheer\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -67,9 +70,22 @@ class UserController extends Controller
      * @param  \NxTMateriaalbeheer\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update($id)
     {
-        //
+        request()->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            ]);
+
+            $user = User::find($id);
+
+            $user->name = request('name');
+            $user->email = request('email');
+
+
+            $user->save();
+
+            return redirect()->route('users.index');
     }
 
     /**
@@ -78,8 +94,15 @@ class UserController extends Controller
      * @param  \NxTMateriaalbeheer\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        $user = User::find($id);
+
+            $user->delete();
+
+
+            $user->save();
+
+            return redirect()->route('users.index');
     }
 }
