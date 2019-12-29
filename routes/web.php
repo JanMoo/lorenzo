@@ -32,15 +32,24 @@ Route::group(['prefix' => 'admin',  'middleware' => 'verified'], function () {
 
     //all routes admin/user/...
     Route::group(['prefix' => 'users'], function () {
-        Route::get('index','UserController@index')->name('users.index');
 
-        Route::get('create','UserController@create')->name('users.create');
+        //show all users
+        Route::get('','UserController@index')->name('users.index');
 
-        Route::get('update\{:id}','UserController@update')->name('users.update');
+        //show form to create a new user
+        Route::get('new','UserController@create')->name('users.create');
 
-        Route::get('delete{:id}','UserController@delete')->name('users.delete');
+        //store the form post request for new user POST
+        Route::get('/create','UserController@update')->name('users.update');
 
+        //show info of a single user and show form to edit
+        Route::get('{user}','UserController@index')->name('users.index');
 
+        //store updated info PUT
+        Route::get('{user}/edit','UserController@index')->name('users.index');
+
+        //destroy a user DELETE
+        Route::get('{user}/delete','UserController@delete')->name('users.delete');
     });
 
 
