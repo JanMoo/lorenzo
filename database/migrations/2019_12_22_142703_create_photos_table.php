@@ -17,6 +17,7 @@ class CreatePhotosTable extends Migration
             $table->bigIncrements('id');
             $table->text('photo_path');
             $table->text('photo_alt_text');
+            $table->morphs('viewable');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        NxTMateriaalbeheer\Providers\AppServiceProvider::class,
+        NxTMateriaalbeheer\Providers\AuthServiceProvider::class,
+        // NxTMateriaalbeheer\Providers\BroadcastServiceProvider::class,
+        NxTMateriaalbeheer\Providers\EventServiceProvider::class,
+        NxTMateriaalbeheer\Providers\RouteServiceProvider::class,
 
     ],
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace NxTMateriaalbeheer;
 
 use Illuminate\Database\Eloquent\Model;
 

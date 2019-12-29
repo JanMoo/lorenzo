@@ -1,17 +1,11 @@
 <?php
 
-namespace App;
+namespace NxTMateriaalbeheer;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Material extends Model
 {
-    //belongs to a standard set, but part of many so -> many to many
-    public function standard_sets()
-    {
-        return $this->belongsToMany(Standard_set::class);
-    }
-
     //belongs to a category
     public function category()
     {
@@ -25,6 +19,11 @@ class Material extends Model
     }
 
     //has many photos
+    //polymorphic reltionship
+    public function photos()
+    {
+        return $this->morphMany(Photo::class, "viewable");
+    }
 
     //many to many rental_records
     //pivot table material_rental_record
@@ -41,7 +40,6 @@ class Material extends Model
     }
 
     //material many to many standard sets
-    //same as for personals sets
     //pivot table material_standard_set
     public function standard_sets()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace NxTMateriaalbeheer;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,6 +24,11 @@ class Rental_record extends Model
        return $this->belongsTo(User::class);
    }
 
-   //has many consumables tied to the materials
+   //has many consumables tied to the materials(hasmanythrough)
+   //defined in pivot table
+   public function consumables()
+   {
+       return $this->hasMany(Consumable::class);
+   }
 
 }

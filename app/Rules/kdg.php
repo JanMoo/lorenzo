@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Rules;
+namespace NxTMateriaalbeheer\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
@@ -25,7 +25,7 @@ class kdg implements Rule
      */
     public function passes($attribute, $value)
     {
-        if(!False===strpos($value, "kdg.be")){
+        if(strpos($value, "kdg.be")){
             return true;
         }
 

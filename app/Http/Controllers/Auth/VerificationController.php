@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace NxTMateriaalbeheer\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use NxTMateriaalbeheer\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
 class VerificationController extends Controller

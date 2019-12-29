@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace NxTMateriaalbeheer;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -38,6 +38,22 @@ class User extends Authenticatable
     ];
 
     //user has many rental records
+    public function rental_records()
+    {
+        return $this->hasMany(Rental_record::class);
+    }
+
     //user has many personal sets
+    public function personal_sets()
+    {
+        return $this->hasMany(Personal_set::class);
+    }
+
+    //user has many incidents
+    public function incidents()
+    {
+        return $this->hasMany(Incident::class);
+    }
+
 
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ConsumableRentalRecord extends Migration
+class CreateMaterialPersonalSetTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class ConsumableRentalRecord extends Migration
      */
     public function up()
     {
-        Schema::create('consumable_rental_record', function (Blueprint $table) {
+        Schema::create('material_personal_set', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('consumable_id');
-            $table->unsignedInteger('rental-record_id');
-            $table->float('amount_used', 8, 2)->nullable();
+            $table->unsignedInteger('personal_set_id');
+            $table->unsignedInteger('material_id');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +29,6 @@ class ConsumableRentalRecord extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('consumable_rental_record');
+        Schema::dropIfExists('material_personal_set');
     }
 }
