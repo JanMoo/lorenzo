@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        dd("lol");
+        return view('admin.users_all', ['users' => User::paginate(15)] );
     }
 
     /**
