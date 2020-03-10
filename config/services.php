@@ -33,5 +33,10 @@ return [
     'sparkpost' => [
         'secret' => env('SPARKPOST_SECRET'),
     ],
+    'graph' => [
+        'client_id' => env('GRAPH_KEY'),
+        'client_secret' => env('GRAPH_SECRET'),
+        'redirect' => env('GRAPH_REDIRECT_URI')
+    ],
 
 ];

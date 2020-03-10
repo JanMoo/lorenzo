@@ -174,6 +174,7 @@ return [
         // NxTMateriaalbeheer\Providers\BroadcastServiceProvider::class,
         NxTMateriaalbeheer\Providers\EventServiceProvider::class,
         NxTMateriaalbeheer\Providers\RouteServiceProvider::class,
+        \SocialiteProviders\Manager\ServiceProvider::class,
 
     ],
 

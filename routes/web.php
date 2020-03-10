@@ -13,6 +13,9 @@
 
 use Illuminate\Routing\RouteGroup;
 
+Route::get('login/graph', 'Auth\LoginController@redirectToProvider');
+Route::get('login/graph/callback', 'Auth\LoginController@handleProviderCallback');
+
 Route::get('/', function () {
     return view('welcome');
 });
